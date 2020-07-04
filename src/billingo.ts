@@ -32,7 +32,7 @@ export const BillingoClient = (params: BillingoParams) => {
     ...config,
     headers: {
       ...config.headers,
-      "X-API-KEY": generateToken(publicKey, secret),
+      "X-API-KEY": `Bearer ${generateToken(publicKey, secret)}`,
     },
   }));
 
