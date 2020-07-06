@@ -20,7 +20,7 @@
     "typescript"
   ],
   "author": "Laszlo {Lacka} Csele - lacka@codingsans.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodingSans/billingo-client/issues"
   },
