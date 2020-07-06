@@ -1,14 +1,14 @@
-import { Vat } from "../enums/vat";
-import { List } from "./list";
-import { Currency } from "../enums/currency";
-import { Partner } from "./partner";
-import { Round } from "../enums/round";
-import { OnlinePayment, PaymentMethod, PaymentStatus } from "../enums/payment";
-import { UnitPriceType } from "../enums/unit-price-type";
-import { Address } from "./address";
-import { DocumentLanguage } from "../enums/document-language";
-import { DocumentNotificationStatus } from "../enums/document-notification-status";
-import { DocumentInsertType } from "../enums/document-insert-type";
+import { Vat } from '../enums/vat';
+import { List } from './list';
+import { Currency } from '../enums/currency';
+import { Partner } from './partner';
+import { Round } from '../enums/round';
+import { OnlinePayment, PaymentMethod, PaymentStatus } from '../enums/payment';
+import { UnitPriceType } from '../enums/unit-price-type';
+import { Address } from './address';
+import { DocumentLanguage } from '../enums/document-language';
+import { DocumentNotificationStatus } from '../enums/document-notification-status';
+import { DocumentInsertType } from '../enums/document-insert-type';
 
 export interface Document {
   id: number;

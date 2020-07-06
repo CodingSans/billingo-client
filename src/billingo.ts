@@ -1,38 +1,41 @@
-import axios from "axios";
-import jwt from "jwt-simple";
-import md5 from "md5";
-import { documentApiFactory } from "./api/document-api";
-import { documentBlockApiFactory } from "./api/document-block-api";
-import { partnerApiFactory } from "./api/partner-api";
-import { productApiFactory } from "./api/product-api";
-import { bankAccountApiFactory } from "./api/bank-account-api";
-import { currencyApiFactory } from "./api/currency-api";
-import { organizationApiFactory } from "./api/organization-api";
-import { utilApiFactory } from "./api/util-api";
+import axios from 'axios';
+import { documentApiFactory, DocumentApi } from './api/document-api';
+import { documentBlockApiFactory, DocumentBlockApi } from './api/document-block-api';
+import { partnerApiFactory, PartnerApi } from './api/partner-api';
+import { productApiFactory, ProductApi } from './api/product-api';
+import { bankAccountApiFactory, BankAccountApi } from './api/bank-account-api';
+import { currencyApiFactory, CurrencyApi } from './api/currency-api';
+import { organizationApiFactory, OrganizationApi } from './api/organization-api';
+import { utilApiFactory, UtilApi } from './api/util-api';
 
 export interface BillingoParams {
-  publicKey: string;
-  secret: string;
-  url?: string;
-  withCredentials?: boolean;
+  apiKey: string;
 }
 
-export const BillingoClient = (params: BillingoParams) => {
-  const baseURL = params.url || "https://api.billingo.hu/v3";
-  const publicKey = params.publicKey || "";
-  const secret = params.secret || "";
-  const withCredentials = params.withCredentials === true ? true : false;
+export interface BillingoClient {
+  documents: DocumentApi;
+  documentBlocks: DocumentBlockApi;
+  partners: PartnerApi;
+  products: ProductApi;
+  bankAccounts: BankAccountApi;
+  currencies: CurrencyApi;
+  organization: OrganizationApi;
+  utils: UtilApi;
+}
+
+export const BillingoClient = (params: BillingoParams): BillingoClient => {
+  const baseURL = 'https://api.billingo.hu/v3';
 
   const instance = axios.create({
     baseURL,
-    withCredentials,
+    withCredentials: true,
   });
 
   instance.interceptors.request.use((config) => ({
     ...config,
     headers: {
       ...config.headers,
-      "X-API-KEY": `Bearer ${generateToken(publicKey, secret)}`,
+      'X-API-KEY': params.apiKey,
     },
   }));
 
@@ -46,19 +49,4 @@ export const BillingoClient = (params: BillingoParams) => {
     organization: organizationApiFactory(instance),
     utils: utilApiFactory(instance),
   };
-};
-
-const generateToken = (publicKey: string, secret: string) => {
-  const ts = Math.floor(new Date().getTime() / 1000) - 10;
-
-  return jwt.encode(
-    {
-      sub: publicKey,
-      iat: ts,
-      exp: ts + 60,
-      iss: "billingo-client",
-      jti: md5(publicKey + ts),
-    },
-    secret
-  );
 };

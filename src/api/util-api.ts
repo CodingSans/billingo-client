@@ -1,13 +1,12 @@
-import { AxiosInstance } from "axios";
-import { Id } from "../interfaces/id";
+import { AxiosInstance } from 'axios';
+import { Id } from '../interfaces/id';
 
-export interface IUtilApi {
+export interface UtilApi {
   getIdFromLegacy: (id: number) => Promise<Id>;
 }
 
-export const utilApiFactory = (instance: AxiosInstance): IUtilApi => {
+export const utilApiFactory = (instance: AxiosInstance): UtilApi => {
   return {
-    getIdFromLegacy: (id: number) =>
-      instance.get<Id>(`/utils/convert-legacy-id/${id}`).then((r) => r.data),
+    getIdFromLegacy: (id: number) => instance.get<Id>(`/utils/convert-legacy-id/${id}`).then((r) => r.data),
   };
 };

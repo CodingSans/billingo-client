@@ -1,4 +1,4 @@
 export enum UnitPriceType {
-  GROSS = "gross",
-  NET = "net",
+  GROSS = 'gross',
+  NET = 'net',
 }

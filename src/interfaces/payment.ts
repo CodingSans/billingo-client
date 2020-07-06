@@ -1,4 +1,4 @@
-import { PaymentMethod } from "../enums/payment";
+import { PaymentMethod } from '../enums/payment';
 
 export interface PaymentHistory {
   date: string;

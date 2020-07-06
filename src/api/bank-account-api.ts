@@ -1,7 +1,7 @@
-import { AxiosInstance } from "axios";
-import { BankAccount, BankAccountList } from "../interfaces/bank-account";
+import { AxiosInstance } from 'axios';
+import { BankAccount, BankAccountList } from '../interfaces/bank-account';
 
-export interface IBankAccountApi {
+export interface BankAccountApi {
   list: () => Promise<BankAccountList>;
   create: (bankAccount: BankAccount) => Promise<BankAccount>;
   get: (id: number) => Promise<BankAccount>;
@@ -9,23 +9,13 @@ export interface IBankAccountApi {
   delete: (id: number) => Promise<void>;
 }
 
-export const bankAccountApiFactory = (
-  instance: AxiosInstance
-): IBankAccountApi => {
+export const bankAccountApiFactory = (instance: AxiosInstance): BankAccountApi => {
   return {
-    list: () =>
-      instance.get<BankAccountList>("/bank-accounts").then((r) => r.data),
-    create: (bankAccount: BankAccount) =>
-      instance
-        .post<BankAccount>("/bank-accounts", bankAccount)
-        .then((r) => r.data),
-    get: (id: number) =>
-      instance.get<BankAccount>(`/bank-accounts/${id}`).then((r) => r.data),
+    list: () => instance.get<BankAccountList>('/bank-accounts').then((r) => r.data),
+    create: (bankAccount: BankAccount) => instance.post<BankAccount>('/bank-accounts', bankAccount).then((r) => r.data),
+    get: (id: number) => instance.get<BankAccount>(`/bank-accounts/${id}`).then((r) => r.data),
     update: (id: number, bankAccount: BankAccount) =>
-      instance
-        .put<BankAccount>(`/bank-accounts/${id}`, bankAccount)
-        .then((r) => r.data),
-    delete: (id: number) =>
-      instance.delete<void>(`/bank-accounts/${id}`).then((r) => r.data),
+      instance.put<BankAccount>(`/bank-accounts/${id}`, bankAccount).then((r) => r.data),
+    delete: (id: number) => instance.delete<void>(`/bank-accounts/${id}`).then((r) => r.data),
   };
 };

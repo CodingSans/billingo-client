@@ -1,5 +1,5 @@
-import { Address } from "./address";
-import { List } from "./list";
+import { Address } from './address';
+import { List } from './list';
 
 export interface PartnerUpsert {
   name: string;

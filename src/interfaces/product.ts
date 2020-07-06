@@ -1,6 +1,6 @@
-import { Currency } from "../enums/currency";
-import { Vat } from "../enums/vat";
-import { List } from "./list";
+import { Currency } from '../enums/currency';
+import { Vat } from '../enums/vat';
+import { List } from './list';
 
 export interface Product {
   id?: number;

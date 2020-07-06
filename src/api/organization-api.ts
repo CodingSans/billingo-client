@@ -1,15 +1,12 @@
-import { AxiosInstance } from "axios";
-import { OrganizationData } from "../interfaces/organization-data";
+import { AxiosInstance } from 'axios';
+import { OrganizationData } from '../interfaces/organization-data';
 
-export interface IOrganizationApi {
+export interface OrganizationApi {
   get: () => Promise<OrganizationData>;
 }
 
-export const organizationApiFactory = (
-  instance: AxiosInstance
-): IOrganizationApi => {
+export const organizationApiFactory = (instance: AxiosInstance): OrganizationApi => {
   return {
-    get: () =>
-      instance.get<OrganizationData>(`/organization`).then((r) => r.data),
+    get: () => instance.get<OrganizationData>(`/organization`).then((r) => r.data),
   };
 };

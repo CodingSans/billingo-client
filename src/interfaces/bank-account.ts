@@ -1,5 +1,5 @@
-import { Currency } from "../enums/currency";
-import { List } from "./list";
+import { Currency } from '../enums/currency';
+import { List } from './list';
 
 export interface BankAccount {
   id?: number;

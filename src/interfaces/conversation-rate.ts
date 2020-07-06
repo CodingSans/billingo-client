@@ -1,4 +1,4 @@
-import { Currency } from "../enums/currency";
+import { Currency } from '../enums/currency';
 
 export interface ConversationRate {
   from_currency?: Currency;

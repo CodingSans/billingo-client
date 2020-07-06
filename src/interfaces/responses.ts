@@ -1,4 +1,4 @@
-import { ClientError, ServerError, ValidationError } from "./errors";
+import { ClientError, ServerError, ValidationError } from './errors';
 
 export interface ClientErrorResponse {
   error: ClientError;

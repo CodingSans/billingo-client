@@ -1,4 +1,4 @@
-import { Country } from "../enums/country";
+import { Country } from '../enums/country';
 
 export interface Address {
   country_code: Country;
