@@ -4,6 +4,9 @@
   "description": "Typescript Billingo Client",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "rm -rf lib && tsc",
     "lint": "eslint src --ext .ts",

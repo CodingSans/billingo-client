@@ -1,4 +1,4 @@
-# billingo-client
+# @codingsans/billingo-client
 
 Promise based Billingo client from [CodingSans](https://codingsans.com)
 
@@ -7,13 +7,13 @@ Promise based Billingo client from [CodingSans](https://codingsans.com)
 Using npm:
 
 ```bash
-$ npm install billingo-client
+$ npm install @codingsans/billingo-client
 ```
 
 Using yarn
 
 ```bash
-$ yarn add billingo-client
+$ yarn add @codingsans/billingo-client
 ```
 
 ## Example
@@ -21,7 +21,7 @@ $ yarn add billingo-client
 Using typescript
 
 ```ts
-import { BillingoClient } from 'billingo-client';
+import { BillingoClient } from '@codingsans/billingo-client';
 
 const client = BillingoClient({
   apiKey: '3dafba72-bfa3-11ea-9bf0-0254eb6072a0',
@@ -31,7 +31,7 @@ const client = BillingoClient({
 Using javascript
 
 ```js
-const BillingoClient = require('billingo-client').BillingoClient;
+const BillingoClient = require('@codingsans/billingo-client').BillingoClient;
 
 const client = BillingoClient({
   apiKey: '3dafba72-bfa3-11ea-9bf0-0254eb6072a0',
