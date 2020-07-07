@@ -21,9 +21,9 @@ $ yarn add @codingsans/billingo-client
 Using typescript
 
 ```ts
-import { BillingoClient } from '@codingsans/billingo-client';
+import { createBillingoClient } from '@codingsans/billingo-client';
 
-const client = BillingoClient({
+const client = createBillingoClient({
   apiKey: '3dafba72-bfa3-11ea-9bf0-0254eb6072a0',
 });
 ```
@@ -31,9 +31,9 @@ const client = BillingoClient({
 Using javascript
 
 ```js
-const BillingoClient = require('@codingsans/billingo-client').BillingoClient;
+const createBillingoClient = require('@codingsans/billingo-client').createBillingoClient;
 
-const client = BillingoClient({
+const client = createBillingoClient({
   apiKey: '3dafba72-bfa3-11ea-9bf0-0254eb6072a0',
 });
 ```

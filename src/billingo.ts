@@ -23,7 +23,7 @@ export interface BillingoClient {
   utils: UtilApi;
 }
 
-export const BillingoClient = (params: BillingoParams): BillingoClient => {
+export const createBillingoClient = (params: BillingoParams): BillingoClient => {
   const baseURL = 'https://api.billingo.hu/v3';
 
   const instance = axios.create({
