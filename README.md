@@ -1,6 +1,10 @@
 # @codingsans/billingo-client
 
-Promise based Billingo client from [CodingSans](https://codingsans.com)
+Promise based Billingo.hu client for Node.JS and Browser written in Typescript from [CodingSans](https://codingsans.com)
+
+## Supported Billingo API versions
+
+- V3.0.7 [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.7)
 
 ## Installation
 
