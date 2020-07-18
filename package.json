@@ -29,12 +29,13 @@
   },
   "homepage": "https://github.com/CodingSans/billingo-client#readme",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "0.19.2"
   },
   "devDependencies": {
-    "@codingsans/eslint-config": "^4.0.0",
-    "eslint": "^7.4.0",
-    "prettier": "^2.0.5",
-    "typescript": "^3.9.6"
+    "@codingsans/eslint-config": "4.0.0",
+    "eslint": "7.4.0",
+    "lodash": "4.17.19",
+    "prettier": "2.0.5",
+    "typescript": "3.9.6"
   }
 }
