@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/CodingSans/billingo-client#readme",
   "dependencies": {
-    "axios": "0.19.2"
+    "axios": "0.21.1"
   },
   "devDependencies": {
     "@codingsans/eslint-config": "4.0.0",
