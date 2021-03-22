@@ -2,13 +2,13 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   publish:
@@ -19,7 +19,6 @@ jobs:
         with:
           node-version: 10
       - run: npm install
-      - run: npm test
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: 0456ae5b-fab4-4440-8497-c6deba96997c
