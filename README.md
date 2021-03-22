@@ -7,7 +7,7 @@ Promise based Billingo.hu client for Node.JS and Browser written in Typescript f
 | Client Version | API Version | API Docs                                                                      |
 | -------------- | ----------- | ----------------------------------------------------------------------------- |
 | 1.2.2          | V3.0.7      | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.7)  |
-| 1.3.1          | V3.0.13     | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.13) |
+| 1.3.2          | V3.0.13     | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.13) |
 
 ## Installation
 
