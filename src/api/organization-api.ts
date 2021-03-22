@@ -7,6 +7,6 @@ export interface OrganizationApi {
 
 export const organizationApiFactory = (instance: AxiosInstance): OrganizationApi => {
   return {
-    get: () => instance.get<OrganizationData>(`/organization`).then((r) => r.data),
+    get: async () => instance.get<OrganizationData>(`/organization`).then((r) => r.data),
   };
 };

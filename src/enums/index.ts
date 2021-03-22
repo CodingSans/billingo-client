@@ -1,3 +1,4 @@
+export * from './category';
 export * from './country';
 export * from './currency';
 export * from './document-insert-type';
