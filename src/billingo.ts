@@ -7,6 +7,7 @@ import { bankAccountApiFactory, BankAccountApi } from './api/bank-account-api';
 import { currencyApiFactory, CurrencyApi } from './api/currency-api';
 import { organizationApiFactory, OrganizationApi } from './api/organization-api';
 import { utilApiFactory, UtilApi } from './api/util-api';
+import { DocumentExportApi, documentExportApiFactory, SpendingApi, spendingApiFactory } from './api';
 
 export interface BillingoParams {
   apiKey: string;
@@ -15,11 +16,13 @@ export interface BillingoParams {
 export interface BillingoClient {
   documents: DocumentApi;
   documentBlocks: DocumentBlockApi;
+  documentExport: DocumentExportApi;
   partners: PartnerApi;
   products: ProductApi;
   bankAccounts: BankAccountApi;
   currencies: CurrencyApi;
   organization: OrganizationApi;
+  spendings: SpendingApi;
   utils: UtilApi;
 }
 
@@ -33,6 +36,7 @@ export const createBillingoClient = (params: BillingoParams): BillingoClient => 
 
   instance.interceptors.request.use((config) => ({
     ...config,
+    // eslint-disable-next-line
     headers: {
       ...config.headers,
       'X-API-KEY': params.apiKey,
@@ -42,11 +46,13 @@ export const createBillingoClient = (params: BillingoParams): BillingoClient => 
   return {
     documents: documentApiFactory(instance),
     documentBlocks: documentBlockApiFactory(instance),
+    documentExport: documentExportApiFactory(instance),
     partners: partnerApiFactory(instance),
     products: productApiFactory(instance),
     bankAccounts: bankAccountApiFactory(instance),
     currencies: currencyApiFactory(instance),
     organization: organizationApiFactory(instance),
+    spendings: spendingApiFactory(instance),
     utils: utilApiFactory(instance),
   };
 };
