@@ -58,7 +58,7 @@ export const documentApiFactory = (instance: AxiosInstance): DocumentApi => {
     createModificationDocument: async (id) =>
       instance.post<Document>(`/documents/${id}/create-modification-document`).then((r) => r.data),
 
-    download: async (id) => instance.get<string>(`/documents/${id}/download`).then((r) => r.data),
+    download: async (id) => instance.get<string>(`/documents/${id}/download`, {responseType: 'arraybuffer',responseEncoding: 'binary'}).then((r) => r.data),
     onlineSzamla: async (id) => instance.get<OnlineSzamlaStatus>(`/documents/${id}/online-szamla`).then((r) => r.data),
     listPaymentHistory: async (id) => instance.get<PaymentHistory[]>(`/documents/${id}/payments`).then((r) => r.data),
     updatePaymentHistory: async (id, payments) =>
