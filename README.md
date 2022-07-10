@@ -9,7 +9,7 @@ https://github.com/CodingSans/billingo-client/issues
 
 | Client Version | API Version | API Docs                                                                      |
 | -------------- | ----------- | ----------------------------------------------------------------------------- |
-| 2.0.0          | V3.0.14     | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.14) |
+| 2.1.0          | V3.0.14     | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.14) |
 | 1.3.4 deprecated [V1 Docs](https://github.com/CodingSans/billingo-client/blob/master/README_V1.md) | V3.0.13     | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.13) |
 | 1.2.2 deprecated [V1 Docs](https://github.com/CodingSans/billingo-client/blob/master/README_V1.md)         | V3.0.7      | [API Documentation](https://app.swaggerhub.com/apis/Billingo/Billingo/3.0.7)  |
 
